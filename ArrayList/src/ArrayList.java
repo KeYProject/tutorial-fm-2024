@@ -3,13 +3,12 @@ import java.util.Arrays;
 
 public class ArrayList implements List {
 
-    private /*@ nullable @*/ /*@ spec_public */ int[] array;
+    private /*@ spec_public */ int[] array;
     private int size = 0;
     
-    /*@ private invariant array != null;
+    /*@ 
       @ private invariant footprint == \set_union(array[*], this.*);
       @ private invariant 0 <= size && size <= array.length;
-      @ private invariant (\forall int i; 0 <= i && i < size; array[i] != null);
       @
       @ private invariant seq == \seq_sub(\array2seq(array), 0, size);
       @*/
